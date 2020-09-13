@@ -10,9 +10,7 @@ PKG_NAME:=luci-app-unblockmusic
 PKG_VERSION:=2.3.5
 PKG_RELEASE:=9
 
-PKG_CONFIG_DEPENDS := \
-	CONFIG_UnblockNeteaseMusic_Go \
-	CONFIG_UnblockNeteaseMusic_NodeJS
+PKG_CONFIG_DEPENDS:=CONFIG_UnblockNeteaseMusic_Go
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -23,7 +21,7 @@ endef
 PKG_LICENSE:=Apache-2.0
 
 LUCI_TITLE:=LuCI support for Unblock NeteaseCloudMusic
-LUCI_DEPENDS:=+dnsmasq-full +ipset +wget +UnblockNeteaseMusic_NodeJS:UnblockNeteaseMusic +UnblockNeteaseMusic_Go:UnblockNeteaseMusicGo
+LUCI_DEPENDS:=+dnsmasq-full +ipset +wget +UnblockNeteaseMusic_Go:UnblockNeteaseMusicGo
 LUCI_PKGARCH:=all
 
 PKG_MAINTAINER:=lean
