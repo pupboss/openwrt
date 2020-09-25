@@ -7,7 +7,7 @@
 config KERNEL_BUILD_USER
 	string "Custom Kernel Build User Name"
 	default "builder" if BUILDBOT
-	default ""
+	default "jetl"
 	help
 	  Sets the Kernel build user string, which for example will be returned
 	  by 'uname -a' on running systems.
@@ -16,7 +16,7 @@ config KERNEL_BUILD_USER
 config KERNEL_BUILD_DOMAIN
 	string "Custom Kernel Build Domain Name"
 	default "buildhost" if BUILDBOT
-	default ""
+	default "dmal-central-t620"
 	help
 	  Sets the Kernel build domain string, which for example will be
 	  returned by 'uname -a' on running systems.

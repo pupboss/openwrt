@@ -39,12 +39,15 @@ speedtype:depends("apptype", "go")
 
 cloudserver = s:option(Value, "cloudserver", translate("服务器位置"))
 cloudserver:value("cdn-shanghai.service.project-openwrt.eu.org:30000:30001", translate("[CTCGFW] 腾讯云上海（高音质）"))
-cloudserver:value("hyird.xyz:30000:30001", translate("[hyird] 阿里云北京（高音质）"))
-cloudserver:value("39.96.56.58:30000:30000", translate("[Sunsky] 阿里云北京（高音质）"))
 cloudserver.description = translate("自定义服务器格式为 IP[域名]:HTTP端口:HTTPS端口<br />如果服务器为LAN内网IP，需要将这个服务器IP放入例外客户端 (不代理HTTP和HTTPS)")
 cloudserver.default = "cdn-shanghai.service.project-openwrt.eu.org:30000:30001"
 cloudserver.rmempty = true
 cloudserver:depends("apptype", "cloud")
+
+search_limit = s:option(Value, "search_limit", translate("搜索结果限制"))
+search_limit.description = translate("在搜索页面显示其他平台搜索结果个数，可填（0-3）")
+search_limit.default = "0"
+search_limit:depends("apptype", "go")
 
 flac = s:option(Flag, "flac_enabled", translate("启用无损音质"))
 flac.default = "1"
@@ -67,7 +70,7 @@ o.description = translate("每天自动检测并更新到最新版本")
 o:depends("apptype", "nodejs")
 
 download_certificate=s:option(DummyValue,"opennewwindow",translate("HTTPS 证书"))
-download_certificate.description = translate("<input type=\"button\" class=\"cbi-button cbi-button-apply\" value=\"下载CA根证书\" onclick=\"window.open('https://gist.githubusercontent.com/pupboss/c42543d5501c861db1ff8f7419df56e6/raw/3fe6f068a8944e962c05fbf0f9ecf16432fb55ed/meltdownrootca.crt')\" /><br />Mac/iOS客户端需要安装 CA根证书并信任<br />iOS系统需要在“设置 -> 通用 -> 关于本机 -> 证书信任设置”中，信任 UnblockNeteaseMusic Root CA <br />Linux 设备请在启用时加入 --ignore-certificate-errors 参数")
+download_certificate.description = translate("<input type=\"button\" class=\"cbi-button cbi-button-apply\" value=\"下载CA根证书\" onclick=\"window.open('https://raw.githubusercontent.com/pupboss/openwrt/master/package/jetl/unblock-netease-music-go/files/ca.crt')\" /><br />Mac/iOS客户端需要安装 CA根证书并信任<br />iOS系统需要在“设置 -> 通用 -> 关于本机 -> 证书信任设置”中，信任 Meltdown Research Root CA <br />Linux 设备请在启用时加入 --ignore-certificate-errors 参数")
 
 local ver = fs.readfile("/usr/share/UnblockNeteaseMusic/core_ver") or "0.00"
 

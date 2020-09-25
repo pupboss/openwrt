@@ -5,5 +5,5 @@ config sfe 'config'
 	option wifi '0'
 	option bbr '0'
 	option dns '0'
-	option dns_server '114.114.114.114,114.114.115.115'
+	option dns_server '8.8.8.8,1.1.1.1'
 

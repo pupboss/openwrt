@@ -38,7 +38,7 @@ dns.rmempty = false
 dns.description = translate("Enable DNS Cache Acceleration and anti ISP DNS pollution")
 
 o = s:option(Value, "dns_server", translate("Upsteam DNS Server"))
-o.default = "114.114.114.114,114.114.115.115"
+o.default = "8.8.8.8,1.1.1.1"
 o.description = translate("Muitiple DNS server can saperate with ','")
 o:depends("dns", 1)
 

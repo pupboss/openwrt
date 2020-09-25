@@ -1,4 +1,0 @@
-
-config UnblockNeteaseMusic_Go
-	bool "UnblockNeteaseMusic Golang Version"
-	default y if i386||x86_64||arm||aarch64

@@ -2,7 +2,9 @@
 
 [English README](README.en.md)
 
-此固件用于个人用途，主要针对海外用户以及旁路网关/透明网关的使用场景做了优化，默认 IP 是 `192.168.1.101`，密码为 `password`。
+[详细使用说明](https://github.com/pupboss/openwrt/wiki)
+
+此固件用于个人用途，主要针对海外用户以及旁路网关/透明网关的使用场景做了优化，默认 IP 自编译的是 `192.168.1.1` 我编译好的是 `192.168.1.101`，密码为 `password`。
 
 > 默认 IP 的配置最好是自己在根目录创建 `./files/etc/config/network`，这样编译结束之后就跟以前的配置一模一样。
 
@@ -26,7 +28,7 @@
 - 时区改成海外的，并且删掉国内的 OpenWrt mirror
 - 调整了默认包的位置，比如 `luci-app` 开头的全部放在全局 [target](/include/target.mk) 里，系统相关的放在 [x86](/target/linux/x86/Makefile) 下。
 
-具体使用方法是这样的，如果你的需求和我差不多，基本上 `make menuconfig` 之后什么也不用改直接保存即可，我个人在编译的时候会新增两个包分别为 `dnsmasq-full build with dhcpv6 support` 和 `open-vm-tools`。选包的时候尽可能一次选对，否则处理多余的依赖包很麻烦。
+具体使用方法是这样的，如果你的需求和我差不多，基本上 `make menuconfig` 之后什么也不用改直接保存即可，我个人在编译的时候会新增一个包 `open-vm-tools`。选包的时候尽可能一次选对，否则处理多余的依赖包很麻烦。
 
 ## 编译环境
 
