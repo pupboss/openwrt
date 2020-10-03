@@ -21,7 +21,7 @@ include $(INCLUDE_DIR)/target.mk
 
 DEFAULT_PACKAGES += partx-utils mkf2fs e2fsprogs kmod-button-hotplug \
 kmod-igb kmod-e1000e kmod-vmxnet3 htop nano iftop tree iperf3 \
-lm-sensors autocore automount autosamba \
+lm-sensors autocore automount autosamba open-vm-tools \
 
 $(eval $(call BuildTarget))
 
