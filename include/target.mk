@@ -18,7 +18,7 @@ block-mount kmod-nf-nathelper kmod-nf-nathelper-extra kmod-ipt-raw wget libustre
 default-settings luci luci-app-upnp luci-app-autoreboot luci-app-arpbind luci-app-webadmin \
 luci-app-adbyby-plus luci-proto-bonding luci-app-ssr-plus luci-app-unblockmusic luci-app-baidupcs-web \
 luci-app-vlmcsd luci-app-wol luci-app-ramfree luci-app-ttyd luci-app-sqm luci-app-rclone \
-luci-app-sfe luci-app-nlbwmon luci-app-accesscontrol luci-app-softethervpn curl
+luci-app-sfe luci-app-nlbwmon luci-app-accesscontrol luci-app-softethervpn luci-app-diskman curl
 # For the basic set
 DEFAULT_PACKAGES.basic:=
 # For nas targets
